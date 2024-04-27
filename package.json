@@ -15,9 +15,11 @@
     "up": "drizzle-kit up:pg"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.42.7",
     "dotenv": "^16.4.5",
     "drizzle-orm": "^0.30.9",
     "next": "13.5.6",
+    "pg": "^8.11.5",
     "postgres": "^3.4.4",
     "react": "^18",
     "react-dom": "^18"
