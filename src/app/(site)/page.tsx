@@ -3,9 +3,17 @@
  import React from 'react'
  import Banner from '../../../public/page_banner.png';
  import Cal from '../../../public/Cal.png';
+ import CustomCard from '@/components/landing-page/custom-card';
+ import Diamond from '../../../public/icons/diamond.svg';
+ import CheckIcon from '../../../public/icons/check.svg';
  import Banner2 from '../../../public/appBanner2.png';
  import { CLIENTS, PRICING_CARDS, PRICING_PLANS, USERS } from '@/lib/constants';
- import Image from 'next/image';
+ import { twMerge } from 'tailwind-merge';
+import clsx from 'clsx';
+import { randomUUID } from 'crypto';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import Image from 'next/image';
+import { CardContent, CardDescription, CardTitle } from '@/components/ui/card';
  const HomePage = () => {
    return (
   <>
@@ -133,23 +141,23 @@
     </section>
 
     <section
-        className="px-4
-        sm:px-6
-        flex
-        justify-center
-        items-center
-        flex-col
-        relative
+      className="px-4
+      sm:px-6
+      flex
+      justify-center
+      items-center
+      flex-col
+      relative
       ">
         <div
-          className="w-[30%]
-          blur-[120px]
-          rounded-full
-          h-32
-          absolute
-          bg-brand-primaryPurple/50
-          -z-10
-          top-22
+        className="w-[30%]
+        blur-[120px]
+        rounded-full
+        h-32
+        absolute
+        bg-brand-primaryPurple/50
+        -z-10
+        top-22
         "/>
         <TitleSection
           title="Keep track of your free tier resource usage"
@@ -157,17 +165,17 @@
           pill="Features"
         />
         <div
-          className="mt-10
-          max-w-[450px]
-          flex
-          justify-center
-          items-center
-          relative
-          sm:ml-0
-          rounded-2xl
-          border-8
-          border-washed-purple-300 
-          border-opacity-10
+        className="mt-10
+        max-w-[450px]
+        flex
+        justify-center
+        items-center
+        relative
+        sm:ml-0
+        rounded-2xl
+        border-8
+        border-washed-purple-300 
+        border-opacity-10
         ">
           <Image
             src={Cal}
@@ -176,6 +184,206 @@
           />
         </div>
     </section>
+
+    <section className="relative">
+        <div
+        className="w-full
+        blur-[120px]
+        rounded-full
+        h-32
+        absolute
+        bg-brand-primaryPurple/50
+        -z-100
+        top-56
+        "/>
+        <div
+        className="mt-20
+        px-4
+        sm:px-6 
+        flex
+        flex-col
+        overflow-x-hidden
+        overflow-visible
+        ">
+          <TitleSection
+            title="Tested by all"
+            subheading="Join thousands of satisfied users who rely on our platform for their 
+            personal and professional productivity needs."
+            pill="Testimonials"
+          />
+          {[...Array(2)].map((arr, index) => (
+            <div
+              key={randomUUID()}
+              className={twMerge(
+                clsx('mt-10 flex flex-nowrap gap-6 self-start', {
+                  'flex-row-reverse': index === 1,
+                  'animate-[slide_250s_linear_infinite]': true,
+                  'animate-[slide_250s_linear_infinite_reverse]': index === 1,
+                  'ml-[100vw]': index === 1,
+                }),
+                'hover:paused'
+              )}
+            >
+              {USERS.map((testimonial, index) => (
+                <CustomCard
+                  key={testimonial.name}
+                  className="w-[500px]
+                  shrink-0s
+                  rounded-xl
+                  dark:bg-gradient-to-t
+                  dark:from-border dark:to-background
+                "
+                  cardHeader={
+                    <div
+                      className="flex
+                      items-center
+                      gap-4
+                  "
+                    >
+                      <Avatar>
+                        <AvatarImage src={`/avatars/${index + 1}.png`} />
+                        <AvatarFallback>AV</AvatarFallback>
+                      </Avatar>
+                      <div>
+                        <CardTitle className="text-foreground">
+                          {testimonial.name}
+                        </CardTitle>
+                        <CardDescription className="dark:text-slate-400">
+                          {testimonial.name.toLocaleLowerCase()}
+                        </CardDescription>
+                      </div>
+                    </div>
+                  }
+                  cardContent={
+                    <p className="dark:text-slate-400">
+                      {testimonial.message}
+                    </p>
+                  }
+                ></CustomCard>
+              ))}
+            </div>
+          ))}
+        </div>
+    </section>
+
+    <section
+        className="mt-20
+        px-4
+        sm:px-6
+      "
+      >
+        <TitleSection
+          title="The Perfect Plan For You"
+          subheading="Experience all the benefits of our platform. Select a plan that suits your needs and take your productivity to new heights."
+          pill="Pricing"
+        />
+        <div
+          className="flex 
+        flex-col-reverse
+        sm:flex-row
+        gap-4
+        justify-center
+        sm:items-stretch
+        items-center
+        mt-10
+        "
+        >
+          {PRICING_CARDS.map((card) => (
+            <CustomCard
+              key={card.planType}
+              className={clsx(
+                'w-[300px] rounded-2xl dark:bg-black/40 background-blur-3xl relative',
+                {
+                  'border-slate-700':
+                    card.planType === PRICING_PLANS.proplan,
+                }
+              )}
+              cardHeader={
+                <CardTitle
+                  className="text-2xl
+                  font-semibold
+              "
+                >
+                  {card.planType === PRICING_PLANS.proplan && (
+                    <>
+                      <div
+                        className="hidden dark:block w-full blur-[120px] rounded-full h-32
+                        absolute
+                        bg-slate-600
+                        -z-10
+                        top-0
+                      "
+                      />
+                      <Image
+                        src={Diamond}
+                        alt="Pro Plan Icon"
+                        className="absolute top-6 right-6"
+                      />
+                    </>
+                  )}
+                  {card.planType}
+                </CardTitle>
+              }
+              cardContent={
+                <CardContent className="p-0">
+                  <span
+                    className="font-normal 
+                    text-2xl
+                "
+                  >
+                    ${card.price}
+                  </span>
+                  {+card.price > 0 ? (
+                    <span className="dark:text-slate-400 ml-1">
+                      /mo
+                    </span>
+                  ) : (
+                    ''
+                  )}
+                  <p className="dark:text-slate-400">
+                    {card.description}
+                  </p>
+                  <Button
+                    variant="btn-primary"
+                    className="whitespace-nowrap w-full mt-4"
+                  >
+                    {card.planType === PRICING_PLANS.proplan
+                      ? 'Go Pro'
+                      : 'Get Started'}
+                  </Button>
+                </CardContent>
+              }
+              cardFooter={
+                <ul
+                  className="font-normal
+                  flex
+                  mb-2
+                  flex-col
+                  gap-4
+                "
+                >
+                  <small>{card.highlightFeature}</small>
+                  {card.freatures.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex
+                      items-center
+                      gap-2
+                    "
+                    >
+                      <Image
+                        src={CheckIcon}
+                        alt="Check Icon"
+                      />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              }
+            />
+          ))}
+        </div>
+      </section>
 
   </>
 
