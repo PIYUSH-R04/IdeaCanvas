@@ -1,10 +1,29 @@
+import TitleSection from '@/components/landing-page/title-section';
 import React from 'react'
 
 const HomePage = () => {
   return (
     <section>
-        <div className='overflow-hidden px-4 sm:px-6 mt-10 sm:flex sm:flex-col gap-4 md:justify-center md:items-center'>
-            Hello World
+        <div className='overflow-hidden 
+        px-4 
+        sm:px-6 
+        mt-10 
+        sm:flex 
+        sm:flex-col 
+        gap-4 
+        md:justify-center 
+        md:items-center'>
+            <TitleSection 
+            pill='✨ Your Collaborative Experience, Perfected' 
+            title="IdeaCanvas, A Collaborative Idea Organizing and Communicating Platform"
+            />
+            <div className='bg-white 
+            p-[2px] 
+            mt-[6] 
+            rounded-xl 
+            bg-gradient-to-r 
+            from-slate-700 
+            to-black'></div>
         </div>
     </section>
 
