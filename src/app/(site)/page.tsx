@@ -292,7 +292,7 @@ import { CardContent, CardDescription, CardTitle } from '@/components/ui/card';
             <CustomCard
               key={card.planType}
               className={clsx(
-                'w-[300px] rounded-2xl dark:bg-black/40 background-blur-3xl relative',
+                'w-[300px] rounded-2xl dark:bg-black/30 background-blur-3xl relative',
                 {
                   'border-slate-700':
                     /* The expression `card.planType === PRICING_PLANS.proplan` is checking if the
