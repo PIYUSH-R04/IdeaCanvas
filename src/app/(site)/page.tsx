@@ -155,7 +155,7 @@ import { CardContent, CardDescription, CardTitle } from '@/components/ui/card';
         rounded-full
         h-32
         absolute
-        bg-brand-primaryPurple/50
+        bg-slate-400
         -z-10
         top-22
         "/>
@@ -174,7 +174,7 @@ import { CardContent, CardDescription, CardTitle } from '@/components/ui/card';
         sm:ml-0
         rounded-2xl
         border-8
-        border-washed-purple-300 
+        border-slate-400 
         border-opacity-10
         ">
           <Image
@@ -295,6 +295,13 @@ import { CardContent, CardDescription, CardTitle } from '@/components/ui/card';
                 'w-[300px] rounded-2xl dark:bg-black/40 background-blur-3xl relative',
                 {
                   'border-slate-700':
+                    /* The expression `card.planType === PRICING_PLANS.proplan` is checking if the
+                    `planType` property of the `card` object is equal to the value stored in
+                    `PRICING_PLANS.proplan`. If the condition is true, it will render specific
+                    content related to the Pro Plan, such as displaying a diamond icon and setting
+                    the plan type as "Pro Plan". This conditional check helps differentiate between
+                    different types of pricing plans and customize the display based on the plan
+                    type. */
                     card.planType === PRICING_PLANS.proplan,
                 }
               )}
@@ -309,7 +316,7 @@ import { CardContent, CardDescription, CardTitle } from '@/components/ui/card';
                       <div
                         className="hidden dark:block w-full blur-[120px] rounded-full h-32
                         absolute
-                        bg-slate-600
+                        bg-slate-500
                         -z-10
                         top-0
                       "
@@ -331,7 +338,7 @@ import { CardContent, CardDescription, CardTitle } from '@/components/ui/card';
                     text-2xl
                 "
                   >
-                    ${card.price}
+                    Rs.{card.price}
                   </span>
                   {+card.price > 0 ? (
                     <span className="dark:text-slate-400 ml-1">
@@ -344,7 +351,7 @@ import { CardContent, CardDescription, CardTitle } from '@/components/ui/card';
                     {card.description}
                   </p>
                   <Button
-                    variant="btn-primary"
+                    variant="outline"
                     className="whitespace-nowrap w-full mt-4"
                   >
                     {card.planType === PRICING_PLANS.proplan
@@ -383,7 +390,7 @@ import { CardContent, CardDescription, CardTitle } from '@/components/ui/card';
             />
           ))}
         </div>
-      </section>
+    </section>
 
   </>
 
