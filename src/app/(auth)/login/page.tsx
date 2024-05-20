@@ -122,7 +122,8 @@ const LoginPage = () => {
         {submitError && <FormMessage>{submitError}</FormMessage>}
         <Button
           type="submit"
-          className="w-full p-6"
+          variant="outline"
+          className="w-full p-6 bg-purple-800 text-xl"
           size="lg"
           disabled={isLoading}
         >
@@ -132,7 +133,7 @@ const LoginPage = () => {
           Dont have an account?{' '}
           <Link
             href="/signup"
-            className="text-primary"
+            className="text-purple-800"
           >
             Sign Up
           </Link>
