@@ -26,6 +26,7 @@ import { FormSchema } from '@/lib/types';
 import { Button } from '@/components/ui/Button';
 import Loader from '@/components/Loader';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
+import { actionSignUpUser } from '@/lib/server-action/auth-actions';
 
 
 const SignUpFormSchema = z
@@ -72,6 +73,7 @@ const Signup = () => {
     defaultValues: { email: '', password: '', confirmPassword: '' },
   });
 
+  // Main
   const isLoading = form.formState.isSubmitting;
   const onSubmit = async ({ email, password }: z.infer<typeof FormSchema>) => {
     const { error } = await actionSignUpUser({ email, password });
@@ -105,7 +107,7 @@ const Signup = () => {
         >
           <Image
             src={Logo}
-            alt="cypress Logo"
+            alt="The Logo"
             width={50}
             height={50}
           />
@@ -113,7 +115,7 @@ const Signup = () => {
             className="font-semibold
           dark:text-white text-4xl first-letter:ml-2"
           >
-            cypress.
+            IdeaCanvas.
           </span>
         </Link>
         <FormDescription
@@ -177,7 +179,8 @@ const Signup = () => {
             />
             <Button
               type="submit"
-              className="w-full p-6"
+              variant="outline"
+              className="w-full p-6 bg-purple-800 text-xl"
               disabled={isLoading}
             >
               {!isLoading ? 'Create Account' : <Loader />}
@@ -190,7 +193,7 @@ const Signup = () => {
           Already have an account?{' '}
           <Link
             href="/login"
-            className="text-primary"
+            className="text-purple-800"
           >
             Login
           </Link>
@@ -215,6 +218,6 @@ const Signup = () => {
 
 export default Signup;
 
-function actionSignUpUser(arg0: { email: string; password: string; }): { error: any; } | PromiseLike<{ error: any; }> {
-  throw new Error('Function not implemented.');
-}
+// function actionSignUpUser(arg0: { email: string; password: string; }): { error: any; } | PromiseLike<{ error: any; }> {
+//   throw new Error('Function not implemented.');
+// }

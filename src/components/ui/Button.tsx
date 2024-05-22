@@ -14,7 +14,7 @@ disabled:opacity-50'` is defining a set of CSS classes that will be used as the 
 button variants in the `buttonVariants` object. These classes will be applied to the buttons along
 with additional variant-specific classes based on the `variant` and `size` props passed to the
 `Button` component. */
-  'inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 z-20',
   {
     variants: {
       variant: {

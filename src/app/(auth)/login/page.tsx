@@ -19,6 +19,7 @@ import Logo from '../../../../public/client1.png';
 import { Input } from "@/components/ui/input";
 import { Button } from '@/components/ui/Button';
 import Loader from '@/components/Loader';
+import { actionLoginUser } from '@/lib/server-action/auth-actions';
 
 // import { Input } from '@/components/ui/input';
 // import { Button } from '@/components/ui/button';
@@ -123,7 +124,8 @@ const LoginPage = () => {
         <Button
           type="submit"
           variant="outline"
-          className="w-full p-6 bg-purple-800 text-xl"
+          className="w-full p-6 b text-xl b bg-purple-800"
+          //style={{ backgroundColor: '#6e6494' }}
           size="lg"
           disabled={isLoading}
         >
@@ -145,6 +147,6 @@ const LoginPage = () => {
 
 export default LoginPage;
 
-function actionLoginUser(formData: { email: string; password: string; }): { error: any; } | PromiseLike<{ error: any; }> {
-    throw new Error('Function not implemented.');
-}
+// function actionLoginUser(formData: { email: string; password: string; }): { error: any; } | PromiseLike<{ error: any; }> {
+//     throw new Error('Function not implemented.');
+// }

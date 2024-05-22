@@ -44,7 +44,7 @@ import { CardContent, CardDescription, CardTitle } from '@/components/ui/card';
         "
         >
  
-          <Button variant="btn-secondary" className=" w-full rounded-[10px] p-6 text-2xl bg-background">Get Free Now!</Button>
+          <Button variant="outline" className=" w-full rounded-[10px] p-6 text-2xl bg-background z-20">Get Free Now!</Button>
         </div>
         <div
           className="md:mt-[-90px]
