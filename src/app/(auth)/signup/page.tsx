@@ -196,10 +196,11 @@ const Signup = () => {
             className="text-purple-800"
           >
             Login
-          </Link>
+          </Link> 
         </span>
         {(confirmation || codeExchangeError) && (
           <>
+          <div style={{ backgroundColor: "black" }}>
             <Alert className={confirmationAndErrorStyles}>
               {!codeExchangeError && <MailCheck className="h-4 w-4" />}
               <AlertTitle>
@@ -209,6 +210,7 @@ const Signup = () => {
                 {codeExchangeError || 'An email confirmation has been sent.'}
               </AlertDescription>
             </Alert>
+            </div>
           </>
         )}
       </form>
