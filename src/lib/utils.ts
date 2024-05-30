@@ -1,16 +1,54 @@
-import { type ClassValue, clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
+import { Price } from './supabase/supabase.types';
 
-/**
- * The function `cn` in TypeScript merges multiple class values using `clsx` and `twMerge`.
- * @param {ClassValue[]} inputs - The `inputs` parameter in the `cn` function is a rest parameter that
- * allows you to pass in multiple class values as arguments. These class values can be strings, arrays
- * of strings, or objects with key-value pairs where the key represents the class name and the value
- * represents a condition for applying that
- * @returns The `cn` function is returning the result of merging the class names passed as arguments
- * using the `clsx` function and then applying Tailwind CSS utility classes using the `twMerge`
- * function.
- */
+
 export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs))
+  return twMerge(clsx(inputs));
 }
+
+export const formatPrice = (price: Price) => {
+  const priceString = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: price.currency || undefined,
+    minimumFractionDigits: 0,
+  }).format((price?.unitAmount || 0) / 100);
+  return priceString;
+};
+
+export const getURL = () => {
+  let url =
+    process?.env?.NEXT_PUBLIC_SITE_URL ??
+    'http://localhost:3000/';
+
+  url = url.includes('http') ? url : `https://${url}`;
+  url = url.charAt(url.length - 1) === '/' ? url : `${url}/`;
+  return url;
+};
+
+export const postData = async ({
+  url,
+  data,
+}: {
+  url: string;
+  data?: { price: Price };
+}) => {
+  console.log('posting,', url, data);
+  const res: Response = await fetch(url, {
+    method: 'POST',
+    headers: new Headers({ 'Content-Type': 'application/json' }),
+    credentials: 'same-origin',
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) {
+    console.log('Error in postData', { url, data, res });
+    throw Error(res.statusText);
+  }
+  return res.json();
+};
+
+export const toDateTime = (secs: number) => {
+  var t = new Date('1970-01-01T00:30:00Z');
+  t.setSeconds(secs);
+  return t;
+};

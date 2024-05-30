@@ -18,7 +18,7 @@ import Image from 'next/image';
 import Logo from '../../../../public/client1.png';
 import { Input } from "@/components/ui/input";
 import { Button } from '@/components/ui/Button';
-import Loader from '@/components/Loader';
+import Loader from '@/components/global/Loader';
 import { actionLoginUser } from '@/lib/server-action/auth-actions';
 
 // import { Input } from '@/components/ui/input';

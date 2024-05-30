@@ -24,7 +24,7 @@ import Logo from '../../../../public/client1.png';
 import { MailCheck } from 'lucide-react';
 import { FormSchema } from '@/lib/types';
 import { Button } from '@/components/ui/Button';
-import Loader from '@/components/Loader';
+import Loader from '@/components/global/Loader';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { actionSignUpUser } from '@/lib/server-action/auth-actions';
 
@@ -36,7 +36,7 @@ const SignUpFormSchema = z
       .string()
       .describe('Password')
       .min(6, 'Password must be minimum 6 characters'),
-    confirmPassword: z
+      confirmPassword: z
       .string()
       .describe('Confirm Password')
       .min(6, 'Password must be minimum 6 characters'),
@@ -199,20 +199,21 @@ const Signup = () => {
           </Link> 
         </span>
         {(confirmation || codeExchangeError) && (
-          <>
-          <div style={{ backgroundColor: "black" }}>
-            <Alert className={confirmationAndErrorStyles}>
-              {!codeExchangeError && <MailCheck className="h-4 w-4" />}
-              <AlertTitle>
-                {codeExchangeError ? 'Invalid Link' : 'Check your email.'}
-              </AlertTitle>
-              <AlertDescription>
-                {codeExchangeError || 'An email confirmation has been sent.'}
-              </AlertDescription>
-            </Alert>
-            </div>
-          </>
-        )}
+  <>
+    <div style={{ backgroundColor: "black" }}>
+      <Alert className={confirmationAndErrorStyles}>
+        {!codeExchangeError && <MailCheck className="h-4 w-4" />}
+        <AlertTitle>
+          {codeExchangeError ? 'Invalid Link' : 'Check your email.'}
+        </AlertTitle>
+        <AlertDescription>
+          {codeExchangeError || 'An email confirmation has been sent.'}
+        </AlertDescription>
+      </Alert>
+    </div>
+  </>
+)}
+
       </form>
     </Form>
   );

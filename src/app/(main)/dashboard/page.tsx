@@ -1,10 +1,10 @@
 import React from 'react';
 import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
+import db from '@/lib/supabase/db';
 
 import { cookies } from 'next/headers';
-import db from '@/lib/supabase/db';
-import { redirect } from 'next/navigation';
 import DashboardSetup from '@/components/dashboard-setup/dashboard-setup';
+import { redirect } from 'next/navigation';
 import { getUserSubscriptionStatus } from '@/lib/supabase/queries';
 
 const DashboardPage = async () => {
@@ -21,7 +21,7 @@ const DashboardPage = async () => {
   });
 
   const { data: subscription, error: subscriptionError } =
-    await getUserSubscriptionStatus(user.id);
+  await getUserSubscriptionStatus(user.id);
 
   if (subscriptionError) return;
 
@@ -36,10 +36,7 @@ const DashboardPage = async () => {
         items-center
   "
       >
-        <DashboardSetup
-          user={user}
-          subscription={subscription}
-        />
+        <DashboardSetup user={user} subscription={subscription}></DashboardSetup>
       </div>
     );
 
@@ -47,3 +44,13 @@ const DashboardPage = async () => {
 };
 
 export default DashboardPage;
+
+// import React from 'react'
+
+// const Page = () => {
+//   return (
+//     <div>Page</div>
+//   )
+// }
+
+// export default Page;
