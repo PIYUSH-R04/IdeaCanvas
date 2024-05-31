@@ -98,7 +98,6 @@ export const prices = pgTable("prices", {
 	metadata: jsonb("metadata"),
 });
 
-
 export const subscriptions = pgTable('subscriptions', {
 	id: text('id').primaryKey().notNull(),
 	userId: uuid('user_id').notNull(),
