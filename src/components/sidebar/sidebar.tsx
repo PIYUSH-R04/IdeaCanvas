@@ -4,6 +4,8 @@ import { cookies } from 'next/headers';
 import { redirect } from 'next/navigation';
 import React from 'react'
 import { twMerge } from 'tailwind-merge';
+import WorkspaceDropdown from './workspace-dropdown';
+import { ScrollArea } from '../ui/scroll-area';
 
 interface SidebarProps {
     params: { workspaceId: string };
@@ -56,7 +58,7 @@ interface SidebarProps {
               ...sharedWorkspaces,
             ].find((workspace) => workspace.id === params.workspaceId)}
           />
-          <PlanUsage
+          {/* <PlanUsage
             foldersLength={workspaceFolderData?.length || 0}
             subscription={subscriptionData}
           />
@@ -83,7 +85,8 @@ interface SidebarProps {
             />
           </ScrollArea>
         </div>
-        <UserCard subscription={subscriptionData} />
+        <UserCard subscription={subscriptionData} /> */}
+        </div> {/* remove this*/}
       </aside>
     );
 }
