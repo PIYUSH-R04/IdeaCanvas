@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import db from '@/lib/supabase/db';
-import 'punycode';
+import 'punycode/';
 import { ThemeProvider } from '@/lib/providers/next-theme-provider';
 import { DM_Sans } from 'next/font/google';
 import { twMerge } from 'tailwind-merge';

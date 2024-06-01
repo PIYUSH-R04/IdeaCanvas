@@ -16,7 +16,7 @@ const SelectedWorkspace: React.FC<SelectedWorkspaceProps> = ({
 }) => {
   const supabase = createClientComponentClient();
   // Change Cypress asap!!!
-  const [workspaceLogo, setWorkspaceLogo] = useState('/cypresslogo.svg');
+  const [workspaceLogo, setWorkspaceLogo] = useState('/appBanner2.png');
   useEffect(() => {
     if (workspace.logo) {
       const path = supabase.storage
