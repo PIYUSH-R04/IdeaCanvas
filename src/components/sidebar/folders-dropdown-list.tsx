@@ -120,7 +120,7 @@ const FoldersDropdownList: React.FC<FoldersDropdownListProps> = ({
             </span>
             <TooltipComponent message="Create Folder">
               <PlusIcon
-                //onClick={addFolderHandler}
+                onClick={addFolderHandler}
                 size={16}
                 className="group-hover/title:inline-block
                 hidden 
@@ -135,17 +135,19 @@ const FoldersDropdownList: React.FC<FoldersDropdownListProps> = ({
             defaultValue={[folderId || '']}
             className="pb-20"
           >
-            {/* {folders
+
+            {folders
               .filter((folder) => !folder.inTrash)
               .map((folder) => (
-                <Dropdown
-                  key={folder.id}
-                  title={folder.title}
-                  listType="folder"
-                  id={folder.id}
-                  iconId={folder.iconId}
-                />
-              ))} */}
+                <div key={folder.id}></div>
+                // <Dropdown
+                //   key={folder.id}
+                //   title={folder.title}
+                //   listType="folder"
+                //   id={folder.id}
+                //   iconId={folder.iconId}
+                // />
+              ))}
           </Accordion>
         </>
       );
