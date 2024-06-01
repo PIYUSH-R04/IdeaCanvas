@@ -12,7 +12,6 @@ import { Accordion } from '../ui/accordion';
 import { useSubscriptionModal } from '@/lib/providers/subscription-modal-provider';
 // import Dropdown from './Dropdown';
 // import useSupabaseRealtime from '@/lib/hooks/useSupabaseRealtime';
-// import { useSubscriptionModal } from '@/lib/providers/subscription-modal-provider';
 
 interface FoldersDropdownListProps {
   workspaceFolders: Folder[];
@@ -140,14 +139,14 @@ const FoldersDropdownList: React.FC<FoldersDropdownListProps> = ({
               .filter((folder) => !folder.inTrash)
               .map((folder) => (
                 <div key={folder.id}></div>
-                // <Dropdown
-                //   key={folder.id}
-                //   title={folder.title}
-                //   listType="folder"
-                //   id={folder.id}
-                //   iconId={folder.iconId}
-                // />
-              ))}
+            //     <Dropdown
+            //       key={folder.id}
+            //       title={folder.title}
+            //       listType="folder"
+            //       id={folder.id}
+            //       iconId={folder.iconId}
+            //     />
+               ))}
           </Accordion>
         </>
       );
