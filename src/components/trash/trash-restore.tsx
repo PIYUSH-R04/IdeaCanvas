@@ -10,25 +10,25 @@ const TrashRestore = () => {
   const [folders, setFolders] = useState<appFoldersType[] | []>([]);
   const [files, setFiles] = useState<File[] | []>([]);
 
-//   useEffect(() => {
-//     const stateFolders =
-//       state.workspaces
-//         .find((workspace) => workspace.id === workspaceId)
-//         ?.folders.filter((folder) => folder.inTrash) || [];
-//     setFolders(stateFolders);
+  useEffect(() => {
+    const stateFolders =
+      state.workspaces
+        .find((workspace) => workspace.id === workspaceId)
+        ?.folders.filter((folder) => folder.inTrash) || [];
+    setFolders(stateFolders);
 
-//     let stateFiles: File[] = [];
-//     state.workspaces
-//       .find((workspace) => workspace.id === workspaceId)
-//       ?.folders.forEach((folder) => {
-//         folder.files.forEach((file) => {
-//           if (file.inTrash) {
-//             stateFiles.push(file);
-//           }
-//         });
-//       });
-//     setFiles(stateFiles);
-//   }, [state, workspaceId]);
+    let stateFiles: File[] = [];
+    state.workspaces
+      .find((workspace) => workspace.id === workspaceId)
+      ?.folders.forEach((folder) => {
+        folder.files.forEach((file) => {
+          if (file.inTrash) {
+            stateFiles.push(file);
+          }
+        });
+      });
+    setFiles(stateFiles);
+  }, [state, workspaceId]);
 
   return (
     <section>

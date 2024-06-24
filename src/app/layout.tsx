@@ -7,7 +7,7 @@ import { ThemeProvider } from '@/lib/providers/next-theme-provider';
 import { DM_Sans } from 'next/font/google';
 import { twMerge } from 'tailwind-merge';
 
-//import { Toaster } from '@/components/ui/toaster';
+import { Toaster } from '@/components/ui/toaster';
 import AppStateProvider from '@/lib/providers/state-provider';
 import { SupabaseUserProvider } from '@/lib/providers/supabase-user-provider';
 
@@ -36,6 +36,7 @@ export default function RootLayout({
           <AppStateProvider>
             <SupabaseUserProvider>
             {children}
+            <Toaster />
             </SupabaseUserProvider>
           </AppStateProvider>
           

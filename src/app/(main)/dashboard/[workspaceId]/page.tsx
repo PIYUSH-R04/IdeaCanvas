@@ -10,7 +10,7 @@ const Workspace = async ({ params }: { params: { workspaceId: string } }) => {
 //   if (error || !data.length) redirect('/dashboard');
   return (
     <div className="relative">
-      Hello world! Page!
+      Hello world! You are in your current workspace!!!
     </div>
   );
 };
