@@ -26,7 +26,6 @@ export default db;
 
 
 
-// Summary
 // Imports: The code imports necessary modules and functions for handling database connections, schema definitions, environment variables, and migrations.
 // Environment Variables: It loads environment variables from a .env file.
 // Database URL Check: It checks if the DATABASE_URL environment variable is set and logs a message if it's missing.
