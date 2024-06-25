@@ -23,7 +23,7 @@ import Logo from '../../../../public/client1.png';
 
 import { MailCheck } from 'lucide-react';
 import { FormSchema } from '@/lib/types';
-import { Button } from '@/components/ui/Button';
+import { Button } from '@/components/ui/button';
 import Loader from '@/components/global/Loader';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { actionSignUpUser } from '@/lib/server-action/auth-actions';

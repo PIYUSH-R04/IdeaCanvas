@@ -48,7 +48,7 @@ import {
 } from '@/components/ui/alert-dialog';
 
 import CollaboratorSearch from '../global/collaborator-search';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/button';
 import { ScrollArea } from '../ui/scroll-area';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import { Alert, AlertDescription } from '../ui/alert';

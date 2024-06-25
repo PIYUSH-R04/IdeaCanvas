@@ -1,7 +1,7 @@
 'use client';
 import { useTheme } from 'next-themes';
 import React from 'react';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/button';
 import { Moon, Sun } from 'lucide-react';
 
 const ModeToggle = () => {

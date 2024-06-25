@@ -118,7 +118,7 @@ import EmojiPicker from '../global/emoji-picker';
 import { Label } from '../ui/label';
 import { Input } from '../ui/input';
 import { Subscription, workspace } from '@/lib/supabase/supabase.types';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/button';
 import Loader from '../global/Loader';
 import { useToast } from '../ui/use-toast';
 import { useRouter } from 'next/navigation';

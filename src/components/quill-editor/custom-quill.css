@@ -1,0 +1,14 @@
+/* custom-quill.css */
+.ql-container {
+    border: none !important; /* Remove border around the editor container */
+  }
+  
+  .ql-toolbar {
+    border: none !important; /* Remove border around the toolbar */
+    background-color: transparent !important; /* Make the toolbar background transparent, optional */
+  }
+  
+  .ql-editor {
+    border: none !important; /* Remove border around the editor */
+    background-color: transparent !important; /* Make the editor background transparent, optional */
+  }

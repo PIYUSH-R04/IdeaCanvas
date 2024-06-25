@@ -1,5 +1,5 @@
  import TitleSection from '@/components/landing-page/title-section';
- import { Button } from '@/components/ui/Button';
+ import { Button } from '@/components/ui/button';
  import React from 'react'
  import Banner from '../../../public/page_banner.png';
  import Cal from '../../../public/Cal.png';

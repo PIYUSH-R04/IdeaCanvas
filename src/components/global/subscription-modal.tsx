@@ -10,7 +10,7 @@ import {
 } from '../ui/dialog';
 import { useSupabaseUser } from '@/lib/providers/supabase-user-provider';
 import { formatPrice, postData } from '@/lib/utils';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/button';
 import Loader from './Loader';
 import { Price, ProductWirhPrice } from '@/lib/supabase/supabase.types';
 import { useToast } from '../ui/use-toast';
