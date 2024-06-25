@@ -35,10 +35,10 @@ import { Badge } from '../ui/badge';
 import Image from 'next/image';
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import EmojiPicker from '../global/emoji-picker';
-//import BannerUpload from '../banner-upload/banner-upload';
 import { XCircleIcon } from 'lucide-react';
 //import { useSocket } from '@/lib/providers/socket-provider';
 import { useSupabaseUser } from '@/lib/providers/supabase-user-provider';
+import BannerUpload from '../banner-upload/banner-upload';
 
 interface QuillEditorProps {
   dirDetails: File | Folder | workspace;
@@ -81,6 +81,12 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
   const [collaborators, setCollaborators] = useState<
     { id: string; email: string; avatarUrl: string }[]
   >([]);
+
+// const [collaborators, setCollaborators] = useState<
+//     { id: string; email: string; avatarUrl: string }[]
+//   >([{ id: "12312123", email: "1hello.world@g.com", avatarUrl: "12312123" }, { id: "12234123", email: "2hello.world@g.com", avatarUrl: "12312123" }, { id: "123234123", email: "3hello.world@g.com", avatarUrl: "12312123" }]);
+
+
   const [deletingBanner, setDeletingBanner] = useState(false);
   const [saving, setSaving] = useState(false);
   const [localCursors, setLocalCursors] = useState<any>([]);
@@ -716,7 +722,7 @@ useEffect(() => {
             </EmojiPicker>
           </div>
           <div className="flex ">
-            {/* <BannerUpload
+            <BannerUpload
               id={fileId}
               dirType={dirType}
               className="mt-2
@@ -728,7 +734,7 @@ useEffect(() => {
               rounded-md"
             >
               {details.bannerUrl ? 'Update Banner' : 'Add Banner'}
-            </BannerUpload> */}
+            </BannerUpload>
             {details.bannerUrl && (
               <Button
                 disabled={deletingBanner}
