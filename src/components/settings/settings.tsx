@@ -16,5 +16,5 @@ const Settings: React.FC<SettingsProps> = ({ children }) => {
     </CustomDialogTrigger>
   );
 };
-
+// imported in native-navigations.tsx
 export default Settings;

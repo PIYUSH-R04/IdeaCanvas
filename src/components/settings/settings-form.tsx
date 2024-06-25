@@ -406,7 +406,7 @@ const SettingsForm = () => {
               type="file"
               accept="image/*"
               placeholder="Profile Picture"
-              // onChange={onChangeProfilePicture}
+              //onChange={onChangeProfilePicture}
               disabled={uploadingProfilePic}
             />
           </div>
