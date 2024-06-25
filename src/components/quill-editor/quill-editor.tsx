@@ -162,7 +162,7 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
     return `${workspaceBreadCrumb} ${folderBreadCrumb} ${fileBreadCrumb}`;
   }, [state, pathname, workspaceId]);
 
-  //
+  
 //   const wrapperRef = useCallback(async (wrapper: any) => {
 //     if (typeof window !== 'undefined') {
 //       if (wrapper === null) return;
