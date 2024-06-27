@@ -71,7 +71,7 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
   fileId,
 }) => {
   const supabase = createClientComponentClient();
-  const { state, workspaceId, folderId, dispatch } = useAppState();
+  const { state, workspaceId = '', folderId = '', dispatch } = useAppState();
   const saveTimerRef = useRef<ReturnType<typeof setTimeout>>();
   const { user } = useSupabaseUser();
   const router = useRouter();
@@ -187,6 +187,30 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
 
 const wrapperRef = useRef<HTMLDivElement>(null);
     
+// useEffect(() => {
+//   const wrapper = wrapperRef.current;
+//   if (typeof window !== 'undefined' && wrapper) {
+//     wrapper.innerHTML = '';
+//     const editor = document.createElement('div');
+//     wrapper.append(editor);
+//     import('quill').then((Quill) => {
+//       import('quill-cursors').then((QuillCursors) => {
+//         Quill.default.register('modules/cursors', QuillCursors.default);
+//         const q = new Quill.default(editor, {
+//           theme: 'snow',
+//           modules: {
+//             toolbar: TOOLBAR_OPTIONS,
+//             cursors: {
+//               transformOnTextChange: true,
+//             },
+//           },
+//         });
+//         setQuill(q);
+//       });
+//     });
+//   }
+// }, []);
+
 useEffect(() => {
   const wrapper = wrapperRef.current;
   if (typeof window !== 'undefined' && wrapper) {
@@ -206,10 +230,55 @@ useEffect(() => {
           },
         });
         setQuill(q);
+        
+        q.on('text-change', () => {
+          if (saveTimerRef.current) {
+            clearTimeout(saveTimerRef.current);
+          }
+          saveTimerRef.current = setTimeout(() => {
+            saveContent(q);
+          }, 1000);
+        });
       });
     });
   }
 }, []);
+
+
+
+
+const saveContent = async (q: any) => {
+  setSaving(true);
+  const content = q.getContents();
+  const contentStr = JSON.stringify(content);
+
+  if (dirType === 'file') {
+    await updateFile({ data: contentStr }, fileId);
+    dispatch({
+      type: 'UPDATE_FILE',
+      payload: { file: { data: contentStr }, fileId, folderId, workspaceId },
+    });
+  }
+  if (dirType === 'folder') {
+    await updateFolder({ data: contentStr }, fileId);
+    dispatch({
+      type: 'UPDATE_FOLDER',
+      payload: { folder: { data: contentStr }, folderId: fileId, workspaceId },
+    });
+  }
+  if (dirType === 'workspace') {
+    await updateWorkspace({ data: contentStr }, fileId);
+    dispatch({
+      type: 'UPDATE_WORKSPACE',
+      payload: { workspace: { data: contentStr }, workspaceId: fileId },
+    });
+  }
+
+  setSaving(false);
+};
+
+
+
 
   const restoreFileHandler = async () => {
     if (dirType === 'file') {
@@ -538,6 +607,8 @@ useEffect(() => {
     };
   }, [fileId, quill, supabase, user]);
 
+
+ 
   return (
     <>
       <div className="relative">
@@ -783,6 +854,25 @@ useEffect(() => {
 };
 
 export default QuillEditor;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
