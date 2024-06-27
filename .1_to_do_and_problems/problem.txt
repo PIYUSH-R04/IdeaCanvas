@@ -1,0 +1,2 @@
+- the texts inside the files and folders are not being saved in the database.
+- when ever I permanently delete a folder/file from trash, if i refresh or login again, the folder/file still exists.
