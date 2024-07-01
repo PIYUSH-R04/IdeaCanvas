@@ -71,7 +71,7 @@ const SettingsForm = () => {
   const [workspaceDetails, setWorkspaceDetails] = useState<workspace>();
   const titleTimerRef = useRef<ReturnType<typeof setTimeout>>();
   const [uploadingProfilePic, setUploadingProfilePic] = useState(false);
-  const [uploadingLogo, setUploadingLogo] = useState(false);
+  const [uploadingLogo, setUploadingLogo] = useState(true); // can be made false
   const [loadingPortal, setLoadingPortal] = useState(false);
 
   //WIP PAYMENT PORTAL
@@ -221,7 +221,7 @@ const SettingsForm = () => {
           placeholder="Workspace Logo"
           onChange={onChangeWorkspaceLogo}
           disabled={uploadingLogo || subscription?.status !== 'active'}
-        />
+        /> {/* to diactivate the workspace logo restrictions */}
         {subscription?.status !== 'active' && (
           <small className="text-muted-foreground">
             To customize your workspace, you need to be on a Pro Plan

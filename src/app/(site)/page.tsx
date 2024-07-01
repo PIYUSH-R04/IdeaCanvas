@@ -295,13 +295,7 @@ import { CardContent, CardDescription, CardTitle } from '@/components/ui/card';
                 'w-[300px] rounded-2xl dark:bg-black/30 background-blur-3xl relative',
                 {
                   'border-slate-700':
-                    /* The expression `card.planType === PRICING_PLANS.proplan` is checking if the
-                    `planType` property of the `card` object is equal to the value stored in
-                    `PRICING_PLANS.proplan`. If the condition is true, it will render specific
-                    content related to the Pro Plan, such as displaying a diamond icon and setting
-                    the plan type as "Pro Plan". This conditional check helps differentiate between
-                    different types of pricing plans and customize the display based on the plan
-                    type. */
+
                     card.planType === PRICING_PLANS.proplan,
                 }
               )}

@@ -38,6 +38,13 @@ const LoginPage = () => {
 
   const isLoading = form.formState.isSubmitting;
 
+/**
+ * The onSubmit function handles form submission in a TypeScript React application by logging in the
+ * user, resetting the form and displaying an error message if needed, then redirecting to the
+ * dashboard.
+ * @param formData - The `formData` parameter in the `onSubmit` function is the data submitted by the
+ * user through a form. It typically contains the values entered by the user in the form fields.
+ */
   const onSubmit: SubmitHandler<z.infer<typeof FormSchema>> = async (
     formData
   ) => {

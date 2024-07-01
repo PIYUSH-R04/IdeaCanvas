@@ -114,12 +114,12 @@ export const PRICING_CARDS = [
     {
       planType: 'Free Plan',
       price: '0',
-      description: 'Limited block trials  for teams',
+      description: 'Limited block trials for teams',
       highlightFeature: '',
       freatures: [
-        'Unlimited blocks for teams',
-        'Unlimited file uploads',
-        '30 day page history',
+        'Unlimited files within folders',
+        'Folders limited to 3',
+        'Option for subscription',
         'Invite 2 guests',
       ],
     },
@@ -129,10 +129,10 @@ export const PRICING_CARDS = [
       description: 'Billed annually. Rs.1000 monthly',
       highlightFeature: 'Everything in free +',
       freatures: [
-        'Unlimited blocks for teams',
+        'Unlimited Folders for teams',
         'Unlimited file uploads',
-        '1 year day page history',
-        'Invite 10 guests',
+        'Banner Uploads',
+        'Invite as many guests',
       ],
     },
   ];

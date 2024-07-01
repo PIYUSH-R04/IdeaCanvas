@@ -17,6 +17,16 @@ export async function actionLoginUser({
   return response;
 }
 
+/**
+ * This TypeScript function is used to sign up a user by checking if the user already exists in a
+ * database and then signing them up using Supabase authentication.
+ * @param  - The `actionSignUpUser` function takes an object as a parameter with the following
+ * properties:
+ * @returns The function `actionSignUpUser` returns either an error object with a message stating "User
+ * already exists" and the existing user data if the user with the provided email already exists in the
+ * 'profiles' table, or it returns the response from the `supabase.auth.signUp` function if the user
+ * does not already exist.
+ */
 export async function actionSignUpUser({
   email,
   password,

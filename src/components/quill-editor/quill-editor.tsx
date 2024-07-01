@@ -163,27 +163,27 @@ const QuillEditor: React.FC<QuillEditorProps> = ({
   }, [state, pathname, workspaceId]);
 
   
-//   const wrapperRef = useCallback(async (wrapper: any) => {
-//     if (typeof window !== 'undefined') {
-//       if (wrapper === null) return;
-//       wrapper.innerHTML = '';
-//       const editor = document.createElement('div');
-//       wrapper.append(editor);
-//       const Quill = (await import('quill')).default;
-//       const QuillCursors = (await import('quill-cursors')).default;
-//       Quill.register('modules/cursors', QuillCursors);
-//       const q = new Quill(editor, {
-//         theme: 'snow',
-//         modules: {
-//           toolbar: TOOLBAR_OPTIONS,
-//           cursors: {
-//             transformOnTextChange: true,
-//           },
-//         },
-//       });
-//       setQuill(q);
-//     }
-//   }, []);
+  // const wrapperRef = useCallback(async (wrapper: any) => {
+  //   if (typeof window !== 'undefined') {
+  //     if (wrapper === null) return;
+  //     wrapper.innerHTML = '';
+  //     const editor = document.createElement('div');
+  //     wrapper.append(editor);
+  //     const Quill = (await import('quill')).default;
+  //     const QuillCursors = (await import('quill-cursors')).default;
+  //     Quill.register('modules/cursors', QuillCursors);
+  //     const q = new Quill(editor, {
+  //       theme: 'snow',
+  //       modules: {
+  //         toolbar: TOOLBAR_OPTIONS,
+  //         cursors: {
+  //           transformOnTextChange: true,
+  //         },
+  //       },
+  //     });
+  //     setQuill(q);
+  //   }
+  // }, []);
 
 const wrapperRef = useRef<HTMLDivElement>(null);
     
