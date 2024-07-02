@@ -321,6 +321,8 @@ const AppStateProvider: React.FC<AppStateProviderProps> = ({ children }) => {
       }
   }, [pathname]);
 
+
+  // Allows to fetch files only when plus icon clicked
   useEffect(() => {
     if (!folderId || !workspaceId) return;
     const fetchFiles = async () => {

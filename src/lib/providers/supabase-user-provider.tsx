@@ -1,3 +1,4 @@
+
 'use client';
 
 import { AuthUser } from '@supabase/supabase-js';

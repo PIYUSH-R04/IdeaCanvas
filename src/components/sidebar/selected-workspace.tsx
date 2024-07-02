@@ -15,7 +15,7 @@ const SelectedWorkspace: React.FC<SelectedWorkspaceProps> = ({
   onClick,
 }) => {
   const supabase = createClientComponentClient();
-  // Change Cypress asap!!!
+  // Change asap!!!
   const [workspaceLogo, setWorkspaceLogo] = useState('/appBanner2.png');
   useEffect(() => {
     if (workspace.logo) {

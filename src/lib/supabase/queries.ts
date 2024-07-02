@@ -150,7 +150,8 @@ export const getPrivateWorkspaces = async (userId: string) => {
         ),
         eq(workspaces.workspaceOwner, userId)
       )
-    )) as workspace[];
+    )
+    ) as workspace[];
   return privateWorkspaces;
 };
 
