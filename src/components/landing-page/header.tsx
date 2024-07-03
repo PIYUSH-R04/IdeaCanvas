@@ -178,7 +178,7 @@ const Header = () => {
                   title={'free Plan'}
                   href={'#'}
                 >
-                  Great for teams just starting out.
+                  Great for individuals and small teams.
                 </ListItem>
               </ul>
             </NavigationMenuContent>

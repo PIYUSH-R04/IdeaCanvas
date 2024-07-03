@@ -68,7 +68,7 @@ const Sidebar: React.FC<SidebarProps> = async ({ params, className }) => {
             ...collaboratingWorkspaces,
             ...sharedWorkspaces,
           ].find((workspace) => workspace.id === params.workspaceId)}  
-          userId={user.id}     
+          //userId={user.id}     
           /> {/* Remove userId={user.id} */}
         <PlanUsage
           foldersLength={workspaceFolderData?.length || 0}

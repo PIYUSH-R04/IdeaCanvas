@@ -231,7 +231,7 @@ const DashboardSetup: React.FC<DashboardSetupProps> = ({
       <CardHeader>
         <CardTitle>Create A Workspace</CardTitle>
         <CardDescription>
-          Lets create a private workspace to get you started.You can add
+          Lets create a private workspace to get you started. You can add
           collaborators later from the workspace settings tab.
         </CardDescription>
       </CardHeader>

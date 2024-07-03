@@ -40,6 +40,7 @@ export const SubscriptionModalProvider = ({
   return (
     <SubscriptionModalContext.Provider value={{ open, setOpen }}>
       {children}
+      {/*open && <SubscriptionModal products={products} />*/}
       <SubscriptionModal products={products} />
     </SubscriptionModalContext.Provider>
   );
