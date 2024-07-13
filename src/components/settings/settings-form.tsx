@@ -74,7 +74,7 @@ const SettingsForm = () => {
   const [uploadingLogo, setUploadingLogo] = useState(true); // can be made false
   const [loadingPortal, setLoadingPortal] = useState(false);
 
-  //WIP PAYMENT PORTAL
+  //WIP PAYMENT PORTAL To do
 
   const redirectToCustomerPortal = async () => {
     setLoadingPortal(true);

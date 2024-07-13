@@ -285,7 +285,7 @@ const DashboardSetup: React.FC<DashboardSetupProps> = ({
                 type="file"
                 accept="image/*"
                 placeholder="Workspace Name"
-                disabled={isLoading || subscription?.status !== 'active'}
+                disabled={isLoading || subscription?.status !== 'active'} // To change to Pro
                 {...register('logo', {
                   required: false,
                 })}

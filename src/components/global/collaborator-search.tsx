@@ -64,7 +64,7 @@ const CollaboratorSearch: React.FC<CollaboratorSearchProps> = ({
       <SheetContent className="w-[400px] sm:w-[540px]">
         <SheetHeader>
           <SheetTitle>Search Collaborator</SheetTitle>
-          <SheetDescription>
+          <SheetDescription> {/* remove <P> tag to solve issue in console*/}
             <p className="text-sm text-muted-foreground">
               You can also remove collaborators after adding them from the
               settings tab.

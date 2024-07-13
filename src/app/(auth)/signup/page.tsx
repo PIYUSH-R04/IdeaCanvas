@@ -438,7 +438,7 @@ const Signup = () => {
         </span>
         {(confirmation || codeExchangeError) && (
   <>
-    <div style={{ backgroundColor: "black" }}>
+    <div style={{ color: "black" }}>
       <Alert className={confirmationAndErrorStyles}>
         {!codeExchangeError && <MailCheck className="h-4 w-4" />}
         <AlertTitle>

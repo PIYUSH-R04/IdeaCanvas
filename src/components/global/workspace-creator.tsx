@@ -163,6 +163,14 @@ const WorkspaceCreator = () => {
               <Plus />
               Add Collaborators
             </Button>
+
+            {/* To fix the nesting issue*/}
+            {/* <div className="w-full">
+              <Plus />
+              Add Collaborators
+            </div> */}
+              {/*//////////////*/}
+
           </CollaboratorSearch>
           <div className="mt-4">
             <span className="text-sm text-muted-foreground">
