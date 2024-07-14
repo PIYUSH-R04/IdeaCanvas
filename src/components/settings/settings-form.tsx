@@ -89,6 +89,10 @@ const SettingsForm = () => {
     }
     setLoadingPortal(false);
   };
+
+    //onChange profile pic
+    const onChangeProfilePicture = () => {}
+
   //addcollborators
   const addCollaborator = async (profile: User) => {
     if (!workspaceId) return;
@@ -122,7 +126,7 @@ const SettingsForm = () => {
     });
     if (titleTimerRef.current) clearTimeout(titleTimerRef.current);
     titleTimerRef.current = setTimeout(async () => {
-      // await updateWorkspace({ title: e.target.value }, workspaceId);
+      await updateWorkspace({ title: e.target.value }, workspaceId);
     }, 500);
   };
 
@@ -187,6 +191,8 @@ const SettingsForm = () => {
     };
     fetchCollaborators();
   }, [workspaceId]);
+
+ 
 
   return (
     <div className="flex gap-4 flex-col">
@@ -482,14 +488,3 @@ const SettingsForm = () => {
 };
 
 export default SettingsForm;
-
-// 'use client';
-// import React from 'react'
-
-// const SettingsForm = () => {
-//   return (
-//     <div>SettingsForm</div>
-//   )
-// }
-
-// export default SettingsForm;

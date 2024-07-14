@@ -102,7 +102,7 @@ export const deleteFile = async (fileId: string) => {
 
 export const deleteFolder = async (folderId: string) => {
   if (!folderId) return;
-  await db.delete(folders).where(eq(folders.id, folderId));
+  await db.delete(files).where(eq(files.id, folderId));
 };
 
 export const getFolderDetails = async (folderId: string) => {
@@ -150,8 +150,7 @@ export const getPrivateWorkspaces = async (userId: string) => {
         ),
         eq(workspaces.workspaceOwner, userId)
       )
-    )
-    ) as workspace[];
+    )) as workspace[];
   return privateWorkspaces;
 };
 
