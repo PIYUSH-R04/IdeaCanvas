@@ -27,6 +27,7 @@ const ioHandler = (req: NextApiRequest, res: NextApiResponseServerIo) => {
       })
 
       s.on('send-cursor-move', (range, fileId, cursorId) => {
+        console.log({ range, fileId, cursorId });
         s.to(fileId).emit('receive-cursor-move', range, fileId, cursorId)
       })
     })

@@ -77,7 +77,7 @@ export const config = {
 
 //   if (['/login', '/signup'].includes(req.nextUrl.pathname)) {
 //     if (session) {
-//       console.log('SESSION HERE LINE 34 middle ware', session)
+//       //console.log('SESSION HERE LINE 34 middle ware', session)
 //       return NextResponse.redirect(new URL('/dashboard', req.url))
 //     }
 //   }
@@ -86,9 +86,9 @@ export const config = {
 //   return res
 // }
 
-// // Add the config object here
-// export const config = {
-//   matcher: [
-//     '/((?!api|_next/static|_next/image|favicon.ico).*)',
-//   ],
-// };
+// // // Add the config object here
+// // export const config = {
+// //   matcher: [
+// //     '/((?!api|_next/static|_next/image|favicon.ico).*)',
+// //   ],
+// // };

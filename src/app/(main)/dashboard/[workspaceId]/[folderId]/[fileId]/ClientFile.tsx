@@ -61,9 +61,11 @@
 import React, { useState } from 'react';
 import QuillEditor from '@/components/quill-editor/quill-editor';
 import KanbanBoard from '@/components/kanban-board/kanban-board';
-import Canvas from '@/components/canvas/canvas';
+
 import { File, Folder, workspace } from '@/lib/supabase/supabase.types';
 import { Button } from '../../../../../../components/ui/button';
+import Canvas from '@/components/canvas/Canvas';
+
 
 interface ClientFileProps {
     dirDetails: File | Folder | workspace;

@@ -1,0 +1,182 @@
+/* Canvas Wrapper */
+.canvasWrapper {
+    display: flex;
+    height: 100vh;
+    position: relative;
+    background-color: black; /* Dark background */
+    color: #e1e1e1; /* Light text */
+  }
+  
+  /* Canvas */
+  .canvas {
+    border: 1px solid #333;
+    background: black; /* Darker background for canvas */
+    cursor: crosshair;
+    flex: 1;
+    margin-left: 120px; /* Adjust based on the width of the toolbar */
+    margin-right: 220px; /* Adjust based on the width of the layer stack */
+  }
+  
+  /* Delete Button */
+  .deleteButton {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #c62828; /* Dark red */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .deleteButton:hover {
+    background-color: #b71c1c; /* Darker red */
+  }
+  
+  /* Toolbar styles */
+  .toolbar {
+    position: fixed;
+    left: 250;
+    top: 50;
+    background-color: black; /* Dark background */
+    border-right: 1px solid #444;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 120px; /* Adjust width as needed */
+    height: 93%;
+  }
+  
+  .toolbar button {
+    margin: 5px 0;
+    padding: 10px;
+    border: none;
+    background-color: black; /* Darker background */
+    color: #e1e1e1; /* Light text */
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .toolbar button:hover {
+    background-color: #555; /* Slightly lighter background */
+  }
+  
+  /* ColorPicker styles */
+  .colorPicker {
+    position: fixed;
+    background-color: black; /* Dark background */
+    padding: 10px;
+    border-right: 1px solid #444;
+    width: 120px; /* Adjust width as needed */
+  }
+  
+  .colorPicker input {
+    display: block;
+    margin: 5px 0;
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #444;
+    background-color: #555; /* Darker background */
+    color: #e1e1e1; /* Light text */
+  }
+  
+  .layerStack {
+    position: fixed;
+    top: 0;
+    border-left: 1px solid #444;
+    right: 0;
+    height: 93%;
+    width: 210px;
+    background-color: black;
+    padding: 10px;
+    max-width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .layerStack h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: white;
+  }
+  
+  .layerItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+  }
+  
+  .layerItem:hover {
+    background-color: #e6e6e6;
+  }
+  
+  .layerType {
+    font-size: 1em;
+    color: #555;
+  }
+  
+  .buttonGroup {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .moveButton {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+  }
+  
+  .moveButton:hover {
+    background-color: grey;
+    color: white;
+  }
+  
+  .moveButton:disabled {
+    background-color: #c0c0c0;
+    cursor: not-allowed;
+  }
+  
+  .moveButton:disabled:hover {
+    background-color: #c0c0c0;
+  }
+  
+  
+  /* CanvasTabs styles */
+  .tabs {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #2d2d2d; /* Dark background */
+    border-top: 1px solid #444;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px; /* Spacing between tabs */
+  }
+  
+  .tabs button {
+    padding: 10px;
+    border: none;
+    background-color: #444; /* Dark background */
+    color: #e1e1e1; /* Light text */
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .tabs button:hover {
+    background-color: #555; /* Slightly lighter background */
+  }
+  
+  .activeTab {
+    background-color: #555; /* Active tab background */
+  }
+  
